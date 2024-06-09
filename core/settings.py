@@ -83,17 +83,17 @@ MYSQL_DB_HOST = config("MYSQL_DB_HOST")
 MYSQL_DB_PORT = config("MYSQL_DB_PORT")
 USE_MYSQL = config("USE_MYSQL", cast=bool)
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql" if USE_MYSQL else "django.db.backends.sqlite3",
-        "NAME": MYSQL_DB_NAME if USE_MYSQL else BASE_DIR / "db.sqlite3",
-        "USER": MYSQL_DB_USER if USE_MYSQL else None,
-        "PASSWORD": MYSQL_DB_PASSWORD if USE_MYSQL else None,
-        "HOST": MYSQL_DB_HOST if USE_MYSQL else None,
-        "PORT": MYSQL_DB_PORT if USE_MYSQL else None,
-        # "OPTIONS": {"charset": "utf8mb4_general_ci", "use_unicode": True},
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.mysql" if USE_MYSQL else "django.db.backends.sqlite3",
+#         "NAME": MYSQL_DB_NAME if USE_MYSQL else BASE_DIR / "db.sqlite3",
+#         "USER": MYSQL_DB_USER if USE_MYSQL else None,
+#         "PASSWORD": MYSQL_DB_PASSWORD if USE_MYSQL else None,
+#         "HOST": MYSQL_DB_HOST if USE_MYSQL else None,
+#         "PORT": MYSQL_DB_PORT if USE_MYSQL else None,
+#         # "OPTIONS": {"charset": "utf8mb4_general_ci", "use_unicode": True},
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
