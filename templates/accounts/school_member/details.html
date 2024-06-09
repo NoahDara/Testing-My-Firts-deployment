@@ -1,0 +1,117 @@
+{% extends 'layouts/base.html' %}
+{% load static%}
+
+{% block navigation %}
+<div class="nk-content-body">
+    <div class="nk-block-head nk-block-head-sm">
+        <div class="nk-block-between py-3 px-3 bg-gray-300 rounded-3">
+            <div class="nk-block-head-content">
+                <h3 class="nk-block-title page-title">School Member Details</h3>
+                <div class="nk-block-des text-soft">
+                    <p>{{ school_member }}</p>
+                </div>
+            </div><!-- .nk-block-head-content -->
+            <!-- .nk-block-head-content -->
+            <div class="nk-block-head-content">
+                <div class="toggle-wrap nk-block-tools-toggle">
+                    <div class="toggle-expand-content" data-content="pageMenu">
+                        <ul class="nk-block-tools g-3">
+                            <li class="nk-block-tools-opt"><a href="{%url 'school-member-list' %}" class="btn btn-primary"><em
+                                        class="icon ni ni-curve-down-left"></em><span>Back</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div><!-- .nk-block-between -->
+    </div><!-- .nk-block-head -->
+{% endblock%}
+
+{% block content%}
+<div class="nk-block nk-block-lg">
+    <div class="card card-bordered">
+        <div class="card-inner">
+            <div class="card-head">
+                <h5 class="card-title">Member of {{ school_member.school }} Information</h5>
+            </div>
+            <ul class="nav nav-tabs mt-n3">
+                <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="tab" href="#tabItem5"><em class="icon ni ni-eye-alt"></em><span>Details</span></a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tabItem5">
+                    <div class="d-flex align-center justify-content-between py-1">
+                        <span class="text-muted">FULL NAME</span>
+                        <span class="text-muted">{{ school_member.first_name }} {{ school_member.last_name }}</span>
+                    </div>
+                    <hr class='bg-light'>
+                    <div class="d-flex align-center justify-content-between py-1">
+                        <span class="text-muted">ROLE</span>
+                        <span class="text-muted">{{ school_member.role }}</span>
+                    </div>
+                    <hr class='bg-light'>
+                    <div class="d-flex align-center justify-content-between py-1">
+                        <span class="text-muted">ID Number</span>
+                        <span class="text-muted">{{ school_member.member_id }}</span>
+                    </div>
+                    <hr class='bg-light'>
+                    <div class="d-flex align-center justify-content-between py-1">
+                        <span class="text-muted">PHONE Number</span>
+                        <span class="text-muted">{{ school_member.mobile_phone }}</span>
+                    </div>
+                    <hr class='bg-light'>
+                    <div class="d-flex align-center justify-content-between py-1">
+                        <span class="text-muted">OCCUPATION</span>
+                        <span class="text-muted">{{ school_member.occupation }}</span>
+                    </div>
+                    <hr class='bg-light'>
+                    <div class="d-flex align-center justify-content-between py-1">
+                        <span class="text-muted">SCHOOL</span>
+                        <span class="text-muted">{{ school_member.school }}</span>
+                    </div>
+                    <div class="d-flex align-center justify-content-between py-1">
+                        <span class="text-muted">LEVEL</span>
+                        <span class="text-muted">{{ school_member.level }}</span>
+                    </div>
+                    <hr class='bg-light'>
+                    <div class="d-flex align-center justify-content-between py-1">
+                        <span class="text-muted">EMAIL</span>
+                        <span class="text-muted">{{ school_member.email }}</span>
+                    </div>
+                    <hr class='bg-light'>
+                    <div class="d-flex align-center justify-content-between py-1">
+                        <span class="text-muted">GENDER</span>
+                        <span class="text-muted">{{ school_member.gender }}</span>
+                    </div>
+                    <hr class='bg-light'>
+                    <div class="d-flex align-center justify-content-between py-1">
+                        <span class="text-muted">JOINING DATE</span>
+                        <span class="text-muted">{{ school_member.joining_date }}</span>
+                    </div>      
+                    <hr class='bg-light'>
+                    <div class="d-flex align-center justify-content-between py-1">
+                        <span class="text-muted">Date Of Birth</span>
+                        <span class="text-muted">{{ school_member.date_of_birth }}</span>
+                    </div>
+                    <hr class='bg-light'>
+                    <div class="d-flex align-center justify-content-between py-1">
+                        <span class="text-muted">STATUS</span>
+                        <span class="text-muted">{{ school_member.status }}</span>
+                    </div>
+                    <hr class='bg-light'>
+                    <div class="d-flex align-center justify-content-between py-1">
+                        <span class="text-muted">CREATED DATE</span>
+                        <span class="text-muted">{{ school_member.created }}</span>
+                    </div>                
+                 </div>
+         
+            </div>
+            
+            
+        </div>
+    </div>
+</div><!-- .nk-block -->
+
+
+{% endblock %}

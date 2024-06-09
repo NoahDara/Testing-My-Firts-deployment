@@ -1,0 +1,1 @@
+from accounts.helpers.generate_data import generate_sample_data
