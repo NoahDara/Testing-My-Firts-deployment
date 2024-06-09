@@ -11,8 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-6*qyx5x6o!f5&l#m9(qk(u4#n!k6t3^d@)xavi01y-lz^#_c-e'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG')
+
 
 ALLOWED_HOSTS = ['*']
 
@@ -36,7 +35,6 @@ INSTALLED_APPS = [
     #3rd part apps
     "crispy_forms",
     "crispy_bootstrap5", 
-    "debug_toolbar",
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -48,7 +46,6 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -65,7 +62,6 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -154,7 +150,7 @@ LOGIN_REDIRECT_URL = 'dashboard'
 ACCOUNT_LOGOUT_REDIRECT = "login"
 
 # Emails
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" if DEBUG == True else "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND =  "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = config('EMAIL_USE_TLS')
 Email_USE_SSL=False
 EMAIL_HOST = config('EMAIL_HOST')
@@ -182,9 +178,7 @@ LOGGER = loguru.logger
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
-DEBUG_TOOLBAR_CONFIG = {
-    'SHOW_TOOLBAR_CALLBACK': lambda request: True,
-}
+
 
 #point to custom user model
 AUTH_USER_MODEL = 'accounts.User'
